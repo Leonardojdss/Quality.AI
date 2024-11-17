@@ -1,0 +1,44 @@
+
+##Resumo geral##
+
+Incluia um resumo geral de todos os cenarios que foram aprovados e reprovado e observao do porque foi reprovado
+
+cenario X - aprovado
+cenario Y - aprovado
+cenario Z - Reprovado, foi encontrado tal defeito X Y Z
+
+##Relatório de Teste detalhado##
+
+#### Cenário X: Criar Produto com Nome Duplicado
+
+**Descrição**: Verificar se a API retorna erro ao tentar criar um produto com um nome já existente no banco de dados.
+
+**Comando curl Executado**:
+```bash
+curl -X POST http://local:3333/api/produtos \
+-H "Content-Type: application/json" \
+-d '{
+  "nome": "Cadeira",
+  "preco": 120.0,
+  "quantidade": 10,
+  "descricao": "Cadeira de madeira"
+}'
+```
+**Resultado Esperado**:
+  - **Código HTTP**: 409 Conflict
+  - **Body**:
+    ```json
+    {
+      "erro": "Já existe produto cadastrado com este nome."
+    }
+
+**Resultado Obtido**:
+  - **Código HTTP**: 409 Conflict
+  - **Body**:
+    ```json
+    {
+      "erro": "Já existe produto cadastrado com este nome."
+    }
+    ```
+
+Análise do cenario X - inclua a analise se o cenario foi aprovado ou reprovado e os porgues
