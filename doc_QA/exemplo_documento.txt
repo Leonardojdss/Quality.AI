@@ -1,0 +1,76 @@
+Documentação API
+
+Host - http://brtlvlty0591fu:3333
+
+Criar Produto
+
+Método HTTP: POST
+
+Endpoint: /api/produtos
+
+Descrição: Adiciona um novo produto ao banco de dados.
+
+{
+  "request_body": [
+    {
+      "campo": "nome",
+      "tipo": "String",
+      "obrigatorio": true,
+      "descricao": "Nome do produto"
+    },
+    {
+      "campo": "preco",
+      "tipo": "Decimal",
+      "obrigatorio": true,
+      "descricao": "Preço do produto (não pode ser negativo)"
+    },
+    {
+      "campo": "quantidade",
+      "tipo": "Integer",
+      "obrigatorio": true,
+      "descricao": "Quantidade disponível (não pode ser negativo)"
+    },
+    {
+      "campo": "descricao",
+      "tipo": "String",
+      "obrigatorio": false,
+      "descricao": "Descrição do produto"
+    }
+  ]
+}
+
+Respostas:
+
+Sucesso (Positiva)
+Código HTTP: 201 Created
+Corpo da Resposta:
+{
+"id": 123,
+"mensagem": "Produto criado com sucesso."
+}
+
+Falha (Negativa)
+Código HTTP: 400 Bad Request
+Corpo da Resposta:
+{
+"erro": "Campos obrigatórios faltando ou inválidos."
+}
+Código HTTP: 409 Conflict
+Condição: Nome do produto duplicado.
+Corpo da Resposta:
+{
+"erro": "Já existe produto cadastrado com este nome."
+}
+Código HTTP: 400 Bad Request
+Condição: Nome sendo informado inválido (Com caractere especial).
+Corpo da Resposta:
+{
+"erro": "Campo nome com dados inválidos."
+}
+
+Restrições de Campos
+nome : Deve ser uma string não vazia. Caracteres especiais não são permitidos.
+preco : Decimal com no máximo duas casas decimais. Valores negativos não são
+permitidos.
+quantidade : Inteiro não negativo.
+descricao : Se fornecida, deve ser uma string.
