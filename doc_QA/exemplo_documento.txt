@@ -1,6 +1,6 @@
 Documentação API
 
-Host - http://brtlvlty0591fu:3333
+Host - http://hostdoservidor:3333
 
 Criar Produto
 

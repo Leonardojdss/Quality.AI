@@ -15,7 +15,7 @@ cenario Z - Reprovado, foi encontrado tal defeito X Y Z
 
 **Comando curl Executado**:
 ```bash
-curl -X POST http://local:3333/api/produtos \
+curl -X POST http://hostdoservidor:3333/api/produtos \
 -H "Content-Type: application/json" \
 -d '{
   "nome": "Cadeira",

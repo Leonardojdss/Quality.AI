@@ -3,7 +3,7 @@
 Documentação para cenario X, essa documentação deve auxiliar para realizar o comando curl
 
 ## Host
-http://local:3333
+http://hostdoservidor:3333
 
 ## Endpoint
 example_1/example_2
@@ -109,7 +109,7 @@ descricao : Se fornecida, deve ser uma string.
 Documentação para cenario X, essa documentação deve auxiliar para realizar o comando curl
 
 ## Host
-http://local:3333
+http://hostdoservidor:3333
 
 ## Endpoint
 example_1/example_2
